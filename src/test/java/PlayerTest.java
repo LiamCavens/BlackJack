@@ -11,39 +11,39 @@ public class PlayerTest {
     Card card;
 
     @Before
-    public void before(){
+    public void before() {
         player = new Player("Liam");
         deck = new Deck();
     }
 
     @Test
-    public void hasName(){
+    public void hasName() {
         assertEquals("Liam", player.getName());
     }
 
     @Test
-    public void handStartsEmpty(){
+    public void handStartsEmpty() {
         assertEquals(0, player.getNumberOfCardsInHand());
     }
 
     @Test
-    public void hasCardInHand(){
-        player.addCardtoHand(deck);
-        player.addCardtoHand(deck);
+    public void hasCardInHand() {
+        player.addCardToHand(deck);
+        player.addCardToHand(deck);
         assertEquals(2, player.getNumberOfCardsInHand());
     }
 
     @Test
     public void hasCardValue() {
-        player.addCardtoHand(deck);
+        player.addCardToHand(deck);
         int result = player.valueOfCardInHand();
         assertNotNull(result);
     }
 
     @Test
     public void hasAllCardValues() {
-        player.addCardtoHand(deck);
-        player.addCardtoHand(deck);
+        player.addCardToHand(deck);
+        player.addCardToHand(deck);
         int result = player.valueOfCardsInHand();
         assertNotNull(result);
     }
